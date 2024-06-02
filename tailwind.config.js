@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'error': "url('/src/assets/errorpage.jpg')",
+      },
       colors: {
          // coustom 
         'green': '#66a96b',
