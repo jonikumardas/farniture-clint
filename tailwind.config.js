@@ -14,7 +14,7 @@ export default {
         'green': '#66a96b',
         'green-btn': '#66a96b',
         'purple': '#7e5bef',
-        'pink': '#ff49db',
+        'coustom-color': 'rgb(51, 148, 65)',
         'orange': '#ff7849',
         'yellow': '#ffc82c',
         'gray-dark': '#273444',
