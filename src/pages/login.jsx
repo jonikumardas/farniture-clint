@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import "../cstmStyle/login.css";
 import { useState } from "react";
-import Google from "../conponents/authintication/google";
-import Facebook from "../conponents/authintication/facebook";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../conponents/authintication/firebase/firebase.config";
 import toast, { Toaster } from "react-hot-toast";
+import Google from "../conponents/authintication/socialLogin/google";
+import Facebook from "../conponents/authintication/socialLogin/facebook";
 
 const Login = () => {
   const [email, setEmail] = useState("");

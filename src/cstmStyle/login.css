@@ -19,6 +19,7 @@
   background-color: #66a96b;
   transform: rotate(50deg);
   left: -196px;
+  top:20px;
   bottom: 30px;
   z-index: 1;
   border-radius: 30px;
