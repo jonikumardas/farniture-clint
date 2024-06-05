@@ -1,34 +1,17 @@
 import { Link } from "react-router-dom";
 import image from "../assets/logo.png";
 import auth from "../conponents/authintication/firebase/firebase.config";
-import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
-import { signOut } from "firebase/auth";
-import { toast } from "react-hot-toast";
+// import { useEffect, useState } from "react";
+// import { onAuthStateChanged } from "firebase/auth";
+// import { signOut } from "firebase/auth";
+// import { toast } from "react-hot-toast";
+import { hendlesignout } from "../sheradComponent/logout";
+import { useContext } from "react";
+import { AuthContext } from "../context/userContext";
 
 const Navber = () => {
-  const [user, setUser] = useState(null);
-  const hendlesignout = () => {
-    signOut(auth)
-      .then(() => {
-        toast.success("Successfully logged out");
-      })
-      .catch((error) => {
-        toast.error("Error logging out: " + error.message);
-      });
-  };
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in
-        setUser(user);
-      } else {
-        // User is signed out
-        setUser(null);
-      }
-    });
-    return () => unsubscribe();
-  }, [auth]);
+  const user = useContext(AuthContext);
+
   const manu = (
     <>
       <li className="hover:text-black">
@@ -68,7 +51,7 @@ const Navber = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold text-white"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-green rounded-box w-52 font-bold text-white"
           >
             {/* manubar here  */}
             {manu}
@@ -87,7 +70,7 @@ const Navber = () => {
       <div className="navbar-end lg:me-[10%]">
         {user ? (
           <button
-            onClick={hendlesignout}
+            onClick={() => hendlesignout(auth)}
             className="font-bold me-3 btn rounded-xl hover:rounded-s-badge hover:text-green-btn"
           >
             log Out

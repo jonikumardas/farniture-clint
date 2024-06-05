@@ -23,7 +23,6 @@ const Login = () => {
       setEmail("");
       setPassword("");
       console.log(user);
-      // ...
     })
     .catch((error) => {
       const errorCode = error.code;

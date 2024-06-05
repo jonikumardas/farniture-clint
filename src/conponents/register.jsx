@@ -3,10 +3,10 @@ import "../cstmStyle/login.css";
 import { useState } from "react";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import auth from "../conponents/authintication/firebase/firebase.config"; // Ensure this path is correct
+import auth from "./authintication/firebase/firebase.config"; // Ensure this path is correct
 import toast, { Toaster } from "react-hot-toast";
-import Google from "../conponents/authintication/socialLogin/google";
-import Facebook from "../conponents/authintication/socialLogin/facebook";
+import Google from "./authintication/socialLogin/google";
+import Facebook from "./authintication/socialLogin/facebook";
 
 const Register = () => {
   const [email, setEmail] = useState("");
